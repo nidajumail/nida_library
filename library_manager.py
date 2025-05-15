@@ -217,12 +217,12 @@ def get_library_stats():
     }
 def create_visualizations(stats):
      if stats['total_books'] > 0:
-         fig_read_status = go.figure{data=[go.pie(
+         fig_read_status = go.Figure(data=[go.pie(
              labels=['Read', 'Unread'],
              values=[stats['read_books'], stats['total_books'] - stats['read_books']],
-             hole=0.4
+             hole=0.4,
              marker=dict(colors=['#10B981', '#F59E0B'])
-         )],}
+         )])
          fig_read_status.update_layout(
                  title_text='Read vs Unread Books',     
                  showlegend=True,
