@@ -334,8 +334,8 @@ if load_library():
               st.markdown("<div class='warning-message'>Your library is empty. Please add books to your library.</div>", unsafe_allow_html=True)
          else:
             cols = st.columns(2)
-            for i , book in enumerate(st.session_state.library):
-                 with cols[i % 2]:
+            for book in st.session_state.library:
+            
                       st.markdown(f"""<div class='book-card'>
                                   <h3>{book['title']}</h3>
                                   <p><strong>Author:</strong> {book['author']}</p>
